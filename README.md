@@ -85,6 +85,8 @@
 
 * `POST /api/v1/invoice/pay/subscription/{advertiserId}` → **processPaymentSubscription** (moyassar)
 
+*TOTAL 20 ENDPOINTS*
+
 ---
 
 # External APIs Used
