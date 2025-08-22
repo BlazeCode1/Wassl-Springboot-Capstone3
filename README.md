@@ -61,31 +61,14 @@
 
 * `DELETE /api/v1/billboard/delete/{lessor_id}/{billboard_id}` → **deleteBillboard**
 
-* `GET /api/v1/billboard/district/{district}` → **findBillboardsByDistrict**
-
-* `GET /api/v1/billboard/size/{height}/{width}` → **findBillboardsByHeightAndWidth**
 
 * `GET /api/v1/billboard/lessor-rating/` → **findBillboardsByLessorRating**
-
-* `GET /api/v1/billboard/availability/{status}` → **findBillboardsByAvailabilityStatus**
-
-## Campaign Asset
-
-* `POST /api/v1/campaign-asset/add/{campaign_id}` → **addCampaignAsset**
-
-* `GET /api/v1/campaign-asset/{id}/file` → **getAssetFile**
-
-## Feedback Asset
-
-* `POST /api/v1/feedback-asset/add/{feedback_id}` → **addFeedbackAsset**
-
-* `GET /api/v1/feedback-asset/{id}/file` → **getAssetFile**
 
 ## Invoice
 
 * `POST /api/v1/invoice/pay/subscription/{advertiserId}` → **processPaymentSubscription** (moyassar)
 
-*TOTAL 20 ENDPOINTS*
+*TOTAL 13 ENDPOINTS*
 
 ---
 

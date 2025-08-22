@@ -27,6 +27,11 @@ public class InvoiceController {
         return ResponseEntity.status(HttpStatus.OK).body(invoiceService.getPaymentStatus(id));
     }
 
+    @GetMapping("/get/{id}")
+    public ResponseEntity<?> getInvoiceById(@PathVariable Integer id){
+        return ResponseEntity.ok(invoiceService.getInvoiceById(id));
+    }
+
     @PostMapping("/pay/{bookingId}")
     public ResponseEntity<?> processPaymentBooking(@PathVariable Integer bookingId,@RequestBody InvoiceDTO invoiceDTO){
         return ResponseEntity.status(200).body(invoiceService.processPayment(bookingId,invoiceDTO));
