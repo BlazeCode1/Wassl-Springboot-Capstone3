@@ -70,7 +70,13 @@
 
 *TOTAL 13 ENDPOINTS*
 
+
+
+
 ---
+# Wassl Diagram
+<img width="4832" height="3285" alt="WasslDiagram" src="https://github.com/user-attachments/assets/9307f657-edcb-4de6-a31f-c319fd9af2ca" />
+
 
 # External APIs Used
 
