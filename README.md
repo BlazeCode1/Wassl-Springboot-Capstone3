@@ -102,6 +102,7 @@ graph LR
 
     AdvertiserService["Advertiser Service"]
     CampaignService["Campaign Service"]
+    LessorService["Lessor Service"]
     InvoiceService["Invoice Service"]
     MailService["Mail Service"]
     WhatsAppService["WhatsApp Service"]
@@ -121,27 +122,29 @@ graph LR
     AdobePDFAPI["Adobe PDF Services API"]
   end
 
-  %% Style colors
-  style AdvertiserService fill:#d1e7dd,stroke:#0f5132,stroke-width:2px
-  style CampaignService fill:#cff4fc,stroke:#055160,stroke-width:2px
-  style InvoiceService fill:#fff3cd,stroke:#664d03,stroke-width:2px
-  style MailService fill:#e2e3e5,stroke:#41464b,stroke-width:2px
-  style WhatsAppService fill:#d1e7dd,stroke:#0f5132,stroke-width:2px
-  style InvoicePdfService fill:#e7f1ff,stroke:#084298,stroke-width:2px
-  style FeedbackService fill:#fefefe,stroke:#41464b,stroke-width:1px
-  style BookingService fill:#fefefe,stroke:#41464b,stroke-width:1px
+  %% Style colors optimized for dark mode
+  style AdvertiserService fill:#1e3a8a,stroke:#93c5fd,color:#f1f5f9,stroke-width:2px
+  style CampaignService fill:#0f766e,stroke:#5eead4,color:#ecfeff,stroke-width:2px
+  style LessorService fill:#7f1d1d,stroke:#fca5a5,color:#fee2e2,stroke-width:2px
+  style InvoiceService fill:#78350f,stroke:#fcd34d,color:#fef3c7,stroke-width:2px
+  style MailService fill:#374151,stroke:#d1d5db,color:#f9fafb,stroke-width:2px
+  style WhatsAppService fill:#14532d,stroke:#86efac,color:#dcfce7,stroke-width:2px
+  style InvoicePdfService fill:#1e40af,stroke:#93c5fd,color:#eff6ff,stroke-width:2px
+  style FeedbackService fill:#111827,stroke:#9ca3af,color:#f9fafb,stroke-width:1px
+  style BookingService fill:#111827,stroke:#9ca3af,color:#f9fafb,stroke-width:1px
 
-  style WathqAPI fill:#f8f9fa,stroke:#212529,stroke-width:2px
-  style OpenAIAPI fill:#dee2e6,stroke:#212529,stroke-width:2px
-  style MoyassarAPI fill:#f8f9fa,stroke:#212529,stroke-width:2px
-  style JakartaMailAPI fill:#dee2e6,stroke:#212529,stroke-width:2px
-  style UltraMsgAPI fill:#f8f9fa,stroke:#212529,stroke-width:2px
-  style AdobePDFAPI fill:#dee2e6,stroke:#212529,stroke-width:2px
+  style WathqAPI fill:#1f2937,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style OpenAIAPI fill:#374151,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style MoyassarAPI fill:#1f2937,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style JakartaMailAPI fill:#374151,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style UltraMsgAPI fill:#1f2937,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style AdobePDFAPI fill:#374151,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
 
   %% Connections (aligned pairs)
   AdvertiserService -->|"Verify Commercial Reg."| WathqAPI
   AdvertiserService -->|"Get AI Recommendations"| OpenAIAPI
 
+  LessorService -->|"Verify Commercial Reg."| WathqAPI
 
   CampaignService -->|"Get AI Recommendations"| OpenAIAPI
 
@@ -154,6 +157,7 @@ graph LR
   BookingService -->|"Send Booking Emails"| MailService
   BookingService --> WhatsAppService
 ```
+
 
 
 
