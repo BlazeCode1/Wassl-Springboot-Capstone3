@@ -93,6 +93,67 @@
 * **Adobe PDF Services API** → لإنشاء فواتير واضحة للمستخدمين
 
 ## External Apis Diagram
-<img width="1227" height="898" alt="Apis" src="https://github.com/user-attachments/assets/76ce1602-acaa-473f-92bc-6297462acb26" />
+```mermaid
+graph LR
+
+  %% Define subgraphs for clarity
+  subgraph WasslSystem[Wassl System]
+    direction TB
+
+    AdvertiserService["Advertiser Service"]
+    CampaignService["Campaign Service"]
+    InvoiceService["Invoice Service"]
+    MailService["Mail Service"]
+    WhatsAppService["WhatsApp Service"]
+    InvoicePdfService["InvoicePdf Service"]
+    FeedbackService["Feedback Service"]
+    BookingService["Booking Service"]
+  end
+
+  subgraph ExternalAPIs[External APIs]
+    direction TB
+
+    WathqAPI["Wathq API"]
+    OpenAIAPI["OpenAI API"]
+    MoyassarAPI["Moyassar API"]
+    JakartaMailAPI["Jakarta Mail API"]
+    UltraMsgAPI["UltraMsg WhatsApp API"]
+    AdobePDFAPI["Adobe PDF Services API"]
+  end
+
+  %% Style colors
+  style AdvertiserService fill:#d1e7dd,stroke:#0f5132,stroke-width:2px
+  style CampaignService fill:#cff4fc,stroke:#055160,stroke-width:2px
+  style InvoiceService fill:#fff3cd,stroke:#664d03,stroke-width:2px
+  style MailService fill:#e2e3e5,stroke:#41464b,stroke-width:2px
+  style WhatsAppService fill:#d1e7dd,stroke:#0f5132,stroke-width:2px
+  style InvoicePdfService fill:#e7f1ff,stroke:#084298,stroke-width:2px
+  style FeedbackService fill:#fefefe,stroke:#41464b,stroke-width:1px
+  style BookingService fill:#fefefe,stroke:#41464b,stroke-width:1px
+
+  style WathqAPI fill:#f8f9fa,stroke:#212529,stroke-width:2px
+  style OpenAIAPI fill:#dee2e6,stroke:#212529,stroke-width:2px
+  style MoyassarAPI fill:#f8f9fa,stroke:#212529,stroke-width:2px
+  style JakartaMailAPI fill:#dee2e6,stroke:#212529,stroke-width:2px
+  style UltraMsgAPI fill:#f8f9fa,stroke:#212529,stroke-width:2px
+  style AdobePDFAPI fill:#dee2e6,stroke:#212529,stroke-width:2px
+
+  %% Connections (aligned pairs)
+  AdvertiserService -->|"Verify Commercial Reg."| WathqAPI
+  AdvertiserService -->|"Get AI Recommendations"| OpenAIAPI
+
+
+  CampaignService -->|"Get AI Recommendations"| OpenAIAPI
+
+  InvoiceService -->|"Process Payments"| MoyassarAPI
+  MailService -->|"Send Emails"| JakartaMailAPI
+  WhatsAppService -->|"Send WhatsApp Messages"| UltraMsgAPI
+  InvoicePdfService -->|"Generate PDF Invoices"| AdobePDFAPI
+
+  FeedbackService -->|"Send Feedback Emails"| MailService
+  BookingService -->|"Send Booking Emails"| MailService
+  BookingService --> WhatsAppService
+```
+
 
 
