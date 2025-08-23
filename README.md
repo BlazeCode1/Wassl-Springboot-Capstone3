@@ -89,4 +89,10 @@
 * **Moyassar API** → لمعالجة عمليات الدفع الإلكتروني (الاشتراكات).
 
 * **OpenAI API** → لتوليد النصائح، التحليلات، الأفكار، والتوصيات الذكية.
+  
+* **Adobe PDF Services API** → لإنشاء فواتير واضحة للمستخدمين
+
+## External Apis Diagram
+<img width="1227" height="898" alt="Apis" src="https://github.com/user-attachments/assets/76ce1602-acaa-473f-92bc-6297462acb26" />
+
 
