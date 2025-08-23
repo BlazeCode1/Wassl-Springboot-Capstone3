@@ -94,6 +94,7 @@
 
 ## External Apis Diagram
 ```mermaid
+
 graph LR
 
   %% Define subgraphs for clarity
@@ -102,7 +103,6 @@ graph LR
 
     AdvertiserService["Advertiser Service"]
     CampaignService["Campaign Service"]
-    LessorService["Lessor Service"]
     InvoiceService["Invoice Service"]
     MailService["Mail Service"]
     WhatsAppService["WhatsApp Service"]
@@ -125,7 +125,6 @@ graph LR
   %% Style colors optimized for dark mode
   style AdvertiserService fill:#1e3a8a,stroke:#93c5fd,color:#f1f5f9,stroke-width:2px
   style CampaignService fill:#0f766e,stroke:#5eead4,color:#ecfeff,stroke-width:2px
-  style LessorService fill:#7f1d1d,stroke:#fca5a5,color:#fee2e2,stroke-width:2px
   style InvoiceService fill:#78350f,stroke:#fcd34d,color:#fef3c7,stroke-width:2px
   style MailService fill:#374151,stroke:#d1d5db,color:#f9fafb,stroke-width:2px
   style WhatsAppService fill:#14532d,stroke:#86efac,color:#dcfce7,stroke-width:2px
@@ -144,7 +143,6 @@ graph LR
   AdvertiserService -->|"Verify Commercial Reg."| WathqAPI
   AdvertiserService -->|"Get AI Recommendations"| OpenAIAPI
 
-  LessorService -->|"Verify Commercial Reg."| WathqAPI
 
   CampaignService -->|"Get AI Recommendations"| OpenAIAPI
 
@@ -156,6 +154,8 @@ graph LR
   FeedbackService -->|"Send Feedback Emails"| MailService
   BookingService -->|"Send Booking Emails"| MailService
   BookingService --> WhatsAppService
+
+
 ```
 
 
