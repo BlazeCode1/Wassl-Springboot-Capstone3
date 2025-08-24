@@ -84,3 +84,8 @@
 
 * **OpenAI API** → لتوليد النصائح، التحليلات، الأفكار، والتوصيات الذكية.
 
+
+# Slides
+https://docs.google.com/presentation/d/1IwXbEv8-HLwLTgC4LNCE8lMkrOAGvYF-V7QCxY-f3QA/edit?usp=sharing
+
+
