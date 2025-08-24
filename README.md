@@ -70,7 +70,13 @@
 
 *TOTAL 13 ENDPOINTS*
 
+
+
+
 ---
+# Wassl Diagram
+<img width="4832" height="3285" alt="WasslDiagram" src="https://github.com/user-attachments/assets/9307f657-edcb-4de6-a31f-c319fd9af2ca" />
+
 
 # External APIs Used
 
@@ -83,6 +89,77 @@
 * **Moyassar API** → لمعالجة عمليات الدفع الإلكتروني (الاشتراكات).
 
 * **OpenAI API** → لتوليد النصائح، التحليلات، الأفكار، والتوصيات الذكية.
+  
+* **Adobe PDF Services API** → لإنشاء فواتير واضحة للمستخدمين
+
+## External Apis Diagram
+```mermaid
+
+graph LR
+
+  %% Define subgraphs for clarity
+  subgraph WasslSystem[Wassl System]
+    direction TB
+
+    AdvertiserService["Advertiser Service"]
+    CampaignService["Campaign Service"]
+    InvoiceService["Invoice Service"]
+    MailService["Mail Service"]
+    WhatsAppService["WhatsApp Service"]
+    InvoicePdfService["InvoicePdf Service"]
+    FeedbackService["Feedback Service"]
+    BookingService["Booking Service"]
+  end
+
+  subgraph ExternalAPIs[External APIs]
+    direction TB
+
+    WathqAPI["Wathq API"]
+    OpenAIAPI["OpenAI API"]
+    MoyassarAPI["Moyassar API"]
+    JakartaMailAPI["Jakarta Mail API"]
+    UltraMsgAPI["UltraMsg WhatsApp API"]
+    AdobePDFAPI["Adobe PDF Services API"]
+  end
+
+  %% Style colors optimized for dark mode
+  style AdvertiserService fill:#1e3a8a,stroke:#93c5fd,color:#f1f5f9,stroke-width:2px
+  style CampaignService fill:#0f766e,stroke:#5eead4,color:#ecfeff,stroke-width:2px
+  style InvoiceService fill:#78350f,stroke:#fcd34d,color:#fef3c7,stroke-width:2px
+  style MailService fill:#374151,stroke:#d1d5db,color:#f9fafb,stroke-width:2px
+  style WhatsAppService fill:#14532d,stroke:#86efac,color:#dcfce7,stroke-width:2px
+  style InvoicePdfService fill:#1e40af,stroke:#93c5fd,color:#eff6ff,stroke-width:2px
+  style FeedbackService fill:#111827,stroke:#9ca3af,color:#f9fafb,stroke-width:1px
+  style BookingService fill:#111827,stroke:#9ca3af,color:#f9fafb,stroke-width:1px
+
+  style WathqAPI fill:#1f2937,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style OpenAIAPI fill:#374151,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style MoyassarAPI fill:#1f2937,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style JakartaMailAPI fill:#374151,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style UltraMsgAPI fill:#1f2937,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+  style AdobePDFAPI fill:#374151,stroke:#e5e7eb,color:#f9fafb,stroke-width:2px
+
+  %% Connections (aligned pairs)
+  AdvertiserService -->|"Verify Commercial Reg."| WathqAPI
+  AdvertiserService -->|"Get AI Recommendations"| OpenAIAPI
+
+
+  CampaignService -->|"Get AI Recommendations"| OpenAIAPI
+
+  InvoiceService -->|"Process Payments"| MoyassarAPI
+  MailService -->|"Send Emails"| JakartaMailAPI
+  WhatsAppService -->|"Send WhatsApp Messages"| UltraMsgAPI
+  InvoicePdfService -->|"Generate PDF Invoices"| AdobePDFAPI
+
+  FeedbackService -->|"Send Feedback Emails"| MailService
+  BookingService -->|"Send Booking Emails"| MailService
+  BookingService --> WhatsAppService
+
+
+```
+
+
+
 
 
 # Slides
